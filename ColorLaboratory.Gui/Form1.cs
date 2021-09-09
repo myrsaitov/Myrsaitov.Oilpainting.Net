@@ -176,7 +176,7 @@ namespace ColorLaboratoryGui
 
         private void buttonPurple_Click(object sender, EventArgs e)
         {
-            SetRGB(255, 0, 255);
+            SetRGB(128, 0, 128);
         }
 
         private void buttonOrange_Click(object sender, EventArgs e)
@@ -186,18 +186,18 @@ namespace ColorLaboratoryGui
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            buttonPurple.BackColor = Color.FromArgb(255, 0, 255);       // 2.
-            buttonRedPurple.BackColor = Color.FromArgb(255, 0, 63);    // 3.
-            buttonRed.BackColor = Color.FromArgb(255, 0, 0);            // 1.
-            buttonRedOrange.BackColor = Color.FromArgb(255, 63, 0);    // 3.
-            buttonOrange.BackColor = Color.FromArgb(255, 127, 0);       // 2.
+            buttonPurple.BackColor = Color.FromArgb(128, 0, 128);       // 2. //
+            buttonRedPurple.BackColor = Color.FromArgb(199, 21, 133);   // 3. //
+            buttonRed.BackColor = Color.FromArgb(255, 0, 0);            // 1. //
+            buttonRedOrange.BackColor = Color.FromArgb(255, 63, 0);     // 3.
+            buttonOrange.BackColor = Color.FromArgb(255, 128, 0);       // 2. //
             buttonYellowOrange.BackColor = Color.FromArgb(255, 191, 0); // 3.
-            buttonYellow.BackColor = Color.FromArgb(255, 255, 0);       // 1.
-            //buttonYellowGreen.BackColor = Color.FromArgb(0, 255, 0);    // 3.
-            buttonGreen.BackColor = Color.FromArgb(0, 255, 0);          // 2.
-            //buttonBlueGreen.BackColor = Color.FromArgb(0, 255, 0);      // 3.
-            buttonBlue.BackColor = Color.FromArgb(0, 0, 255);           // 1.
-            buttonBluePurple.BackColor = Color.FromArgb(255, 0, 191);   // 3.
+            buttonYellow.BackColor = Color.FromArgb(255, 255, 0);       // 1. //
+            buttonYellowGreen.BackColor = Color.FromArgb(127, 255, 0);  // 3.
+            buttonGreen.BackColor = Color.FromArgb(0, 255, 0);          // 2. //
+            buttonBlueGreen.BackColor = Color.FromArgb(0, 127, 127);    // 3.
+            buttonBlue.BackColor = Color.FromArgb(0, 0, 255);           // 1. //
+            buttonBluePurple.BackColor = Color.FromArgb(126, 0, 255);   // 3.
         }
 
         private void buttonRedOrange_Click(object sender, EventArgs e)
@@ -212,12 +212,22 @@ namespace ColorLaboratoryGui
 
         private void buttonRedPurple_Click(object sender, EventArgs e)
         {
-            SetRGB(255, 0, 63);
+            SetRGB(199, 21, 133);
         }
 
         private void buttonBluePurple_Click(object sender, EventArgs e)
         {
-            SetRGB(255, 0, 191);
+            SetRGB(126, 0, 255);
+        }
+
+        private void buttonBlueGreen_Click(object sender, EventArgs e)
+        {
+            SetRGB(0, 128, 128);
+        }
+
+        private void buttonYellowGreen_Click(object sender, EventArgs e)
+        {
+            SetRGB(127, 255, 0);
         }
     }
 }

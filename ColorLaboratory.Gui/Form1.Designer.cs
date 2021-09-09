@@ -373,6 +373,7 @@ namespace ColorLaboratoryGui
             this.buttonYellowGreen.TabIndex = 32;
             this.buttonYellowGreen.Text = "3.";
             this.buttonYellowGreen.UseVisualStyleBackColor = true;
+            this.buttonYellowGreen.Click += new System.EventHandler(this.buttonYellowGreen_Click);
             // 
             // buttonBlueGreen
             // 
@@ -382,6 +383,7 @@ namespace ColorLaboratoryGui
             this.buttonBlueGreen.TabIndex = 33;
             this.buttonBlueGreen.Text = "3.";
             this.buttonBlueGreen.UseVisualStyleBackColor = true;
+            this.buttonBlueGreen.Click += new System.EventHandler(this.buttonBlueGreen_Click);
             // 
             // buttonBluePurple
             // 
