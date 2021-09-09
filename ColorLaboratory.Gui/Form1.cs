@@ -1,10 +1,14 @@
-﻿using System;
+﻿using ColorLaboratory.Application.Services.Contracts;
+using ColorLaboratory.Application.Services.Interfaces;
+using ColorLaboratory.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,8 +16,11 @@ namespace ColorLaboratoryGui
 {
     public partial class Form1 : Form
     {
+        private readonly IColorLaboratoryService _colorLaboratoryService;
+        private readonly CancellationToken cancellationToken;
         public Form1()
         {
+            _colorLaboratoryService = (IColorLaboratoryService)Program.ServiceProvider.GetService(typeof(IColorLaboratoryService));
             InitializeComponent();
         }
 
@@ -52,7 +59,7 @@ namespace ColorLaboratoryGui
             textBoxG.Text = G.ToString();
             textBoxB.Text = B.ToString();
             ApplyColor();
-            RGB2CMYK();
+            Rgb2CmykAsync();
         }
 
         private void ApplyColor()
@@ -78,39 +85,32 @@ namespace ColorLaboratoryGui
             SetRGB(0, 0, 255);
         }
 
-        private void RGB2CMYK()
+        private async Task Rgb2CmykAsync()
         {
-            // https://www.rapidtables.com/convert/color/rgb-to-cmyk.html
+            var request = new Rgb2Cmyk.Request() { rgb = new Rgb() };
+            request.rgb.R = byte.Parse(textBoxR.Text);
+            request.rgb.G = byte.Parse(textBoxG.Text);
+            request.rgb.B = byte.Parse(textBoxB.Text);
 
-            int R_ = int.Parse(textBoxR.Text);
-            int G_ = int.Parse(textBoxG.Text);
-            int B_ = int.Parse(textBoxB.Text);
-
-            double R = (double) R_ / 255;
-            double G = (double) G_ / 255;
-            double B = (double) B_ / 255;
-
-            double K = 1 - (new double[] { R, G, B }.Max());
-            if (K < 1)
-            {
-                double C = (1 - R - K) / (1 - K);
-                double M = (1 - G - K) / (1 - K);
-                double Y = (1 - B - K) / (1 - K);
-                textBoxC.Text = C.ToString();
-                textBoxM.Text = M.ToString();
-                textBoxY.Text = Y.ToString();
-                textBoxK.Text = K.ToString();
-            }
-            else
-            {
-                textBoxC.Text = "0";
-                textBoxM.Text = "0";
-                textBoxY.Text = "0";
-                textBoxK.Text = K.ToString();
-            }
+            var response = await _colorLaboratoryService.Rgb2Cmyk(request,cancellationToken);
+            textBoxC.Text = response.cmyk.C.ToString();
+            textBoxM.Text = response.cmyk.M.ToString();
+            textBoxY.Text = response.cmyk.Y.ToString();
+            textBoxK.Text = response.cmyk.K.ToString();
         }
-        private void CMYK2RGB()
+        private async Task Cmyk2RgbAsync()
         {
+            var request = new Cmyk2Rgb.Request() { cmyk = new Cmyk() };
+            request.cmyk.C = double.Parse(textBoxC.Text);
+            request.cmyk.M = double.Parse(textBoxM.Text);
+            request.cmyk.Y = double.Parse(textBoxY.Text);
+            request.cmyk.K = double.Parse(textBoxK.Text);
+
+            var response = await _colorLaboratoryService.Cmyk2Rgb(request, cancellationToken);
+            textBoxR.Text = response.rgb.R.ToString();
+            textBoxG.Text = response.rgb.G.ToString();
+            textBoxB.Text = response.rgb.B.ToString();
+            /*
             // https://www.rapidtables.com/convert/color/cmyk-to-rgb.html
 
             double C = 0;
@@ -142,6 +142,7 @@ namespace ColorLaboratoryGui
             textBoxR.Text = R.ToString();
             textBoxG.Text = G.ToString();
             textBoxB.Text = B.ToString();
+            */
         }
         private void textBoxY_TextChanged(object sender, EventArgs e)
         {
@@ -158,13 +159,13 @@ namespace ColorLaboratoryGui
 
         private void buttonRgb2Cmyk_Click(object sender, EventArgs e)
         {
-            RGB2CMYK();
+            Rgb2CmykAsync();
             ApplyColor();
         }
 
         private void buttonCmyk2Rgb_Click(object sender, EventArgs e)
         {
-            CMYK2RGB();
+            Cmyk2RgbAsync();
             ApplyColor();
         }
 

@@ -1,6 +1,6 @@
-﻿using ColorLaboratory.Services.Interfaces;
+﻿using ColorLaboratory.Application.Services.Interfaces;
 
-namespace ColorLaboratory.Application.Services
+namespace ColorLaboratory.Application.Services.Implementations
 {
     public partial class ColorLaboratoryServiceV1 : IColorLaboratoryService
     {
@@ -9,7 +9,6 @@ namespace ColorLaboratory.Application.Services
         /// </summary>
         public ColorLaboratoryServiceV1()
         {
-
         }
     }
 }

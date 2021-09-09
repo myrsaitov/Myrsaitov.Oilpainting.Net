@@ -8,9 +8,6 @@
     <ProjectGuid>{B4DAA84B-BF8C-4704-A85B-65BFB01A77CF}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Services\Exceptions\" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="FluentValidation">
       <Version>10.3.3</Version>
     </PackageReference>

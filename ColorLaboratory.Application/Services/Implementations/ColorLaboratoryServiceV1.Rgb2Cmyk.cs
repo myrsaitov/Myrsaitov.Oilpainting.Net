@@ -1,11 +1,14 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using ColorLaboratory.Services.Interfaces;
+using ColorLaboratory.Application.Services.Interfaces;
 using ColorLaboratory.Application.Services.Contracts;
 using System.Linq;
 using System;
+using ColorLaboratory.Application.Services.Validators;
+using ColorLaboratory.Application.Services.Exceptions;
+using ColorLaboratory.Domain;
 
-namespace ColorLaboratory.Application.Services
+namespace ColorLaboratory.Application.Services.Implementations
 {
     public partial class ColorLaboratoryServiceV1 : IColorLaboratoryService
     {
@@ -20,12 +23,22 @@ namespace ColorLaboratory.Application.Services
             Rgb2Cmyk.Request request,
             CancellationToken cancellationToken)
         {
+            // Null Request Check
             if (request is null)
             {
                 throw new ArgumentNullException(nameof(request));
             }
 
-            var response = new Rgb2Cmyk.Response { };
+            // Fluent Validation
+            var validator = new Rgb2CmykRequestValidator();
+            var result = await validator.ValidateAsync(request);
+
+            if (!result.IsValid)
+            {
+                throw new Rgb2CmykNotValidException(result.Errors.Select(x => x.ErrorMessage).ToString());
+            }
+
+            var response = new Rgb2Cmyk.Response { cmyk = new Cmyk() };
 
             double R = (double)request.rgb.R / 255;
             double G = (double)request.rgb.G / 255;

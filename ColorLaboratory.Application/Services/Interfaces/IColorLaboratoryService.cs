@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using ColorLaboratory.Application.Services.Contracts;
 
-namespace ColorLaboratory.Services.Interfaces
+namespace ColorLaboratory.Application.Services.Interfaces
 {
     public interface IColorLaboratoryService
     {
