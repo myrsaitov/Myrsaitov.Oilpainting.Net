@@ -37,9 +37,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{740CA88D-991E-492C-81AE-ECA05B6C207E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorLaboratory.Tests", "ColorLaboratory.Tests\ColorLaboratory.Tests.csproj", "{FE57541C-B54D-4B88-8821-E508C1CBB480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorLaboratory.Tests", "ColorLaboratory.Tests\ColorLaboratory.Tests.csproj", "{FE57541C-B54D-4B88-8821-E508C1CBB480}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E32270CA-1416-41DA-97F1-0CB807B84E80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaletteBuilder", "PaletteBuilder", "{11EF716B-5C23-4C63-99EB-4A3E5BA44DA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
