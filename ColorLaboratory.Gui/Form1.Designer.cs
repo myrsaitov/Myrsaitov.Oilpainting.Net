@@ -1,5 +1,5 @@
 ﻿
-namespace Colors
+namespace ColorLaboratoryGui
 {
     partial class Form1
     {

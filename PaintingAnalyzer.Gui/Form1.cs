@@ -51,7 +51,7 @@ namespace GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            image = Image.FromFile(@"..\..\..\PIC\ninethval.jpg");
+            image = Image.FromFile(@"..\..\PIC\ninethval.jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             this.pictureBox1.Image = image;
 
