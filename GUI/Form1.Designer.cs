@@ -30,7 +30,7 @@ namespace GUI
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonApplyRgb = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -43,16 +43,20 @@ namespace GUI
             this.pictureBox1.Size = new System.Drawing.Size(1062, 608);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // button1
+            // buttonApplyRgb
             // 
-            this.button1.Location = new System.Drawing.Point(904, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonApplyRgb.Location = new System.Drawing.Point(904, 82);
+            this.buttonApplyRgb.Name = "buttonApplyRgb";
+            this.buttonApplyRgb.Size = new System.Drawing.Size(75, 23);
+            this.buttonApplyRgb.TabIndex = 1;
+            this.buttonApplyRgb.Text = "Browse";
+            this.buttonApplyRgb.UseVisualStyleBackColor = true;
+            this.buttonApplyRgb.Click += new System.EventHandler(this.buttonApplyRgb_Click);
             // 
             // openFileDialog1
             // 
@@ -67,7 +71,7 @@ namespace GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 632);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonApplyRgb);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -80,7 +84,7 @@ namespace GUI
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonApplyRgb;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
