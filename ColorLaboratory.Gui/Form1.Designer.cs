@@ -57,6 +57,14 @@ namespace ColorLaboratoryGui
             this.buttonCmyk2Rgb = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.buttonRedOrange = new System.Windows.Forms.Button();
+            this.buttonYellowOrange = new System.Windows.Forms.Button();
+            this.buttonYellowGreen = new System.Windows.Forms.Button();
+            this.buttonBlueGreen = new System.Windows.Forms.Button();
+            this.buttonBluePurple = new System.Windows.Forms.Button();
+            this.buttonRedPurple = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonApplyRgb
@@ -134,79 +142,80 @@ namespace ColorLaboratoryGui
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(546, 25);
+            this.label4.Location = new System.Drawing.Point(550, 50);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.Size = new System.Drawing.Size(108, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Основные цвета";
+            this.label4.Text = "1. Первичные цвета";
             // 
             // buttonRed
             // 
-            this.buttonRed.Location = new System.Drawing.Point(448, 56);
+            this.buttonRed.Location = new System.Drawing.Point(538, 230);
             this.buttonRed.Name = "buttonRed";
-            this.buttonRed.Size = new System.Drawing.Size(75, 23);
+            this.buttonRed.Size = new System.Drawing.Size(55, 55);
             this.buttonRed.TabIndex = 9;
-            this.buttonRed.Text = "Красный";
+            this.buttonRed.Text = "1.";
             this.buttonRed.UseVisualStyleBackColor = true;
             this.buttonRed.Click += new System.EventHandler(this.buttonRed_Click);
             // 
             // buttonYellow
             // 
-            this.buttonYellow.Location = new System.Drawing.Point(549, 56);
+            this.buttonYellow.Location = new System.Drawing.Point(773, 230);
             this.buttonYellow.Name = "buttonYellow";
-            this.buttonYellow.Size = new System.Drawing.Size(75, 23);
+            this.buttonYellow.Size = new System.Drawing.Size(55, 55);
             this.buttonYellow.TabIndex = 10;
-            this.buttonYellow.Text = "Желтый";
+            this.buttonYellow.Text = "1.";
             this.buttonYellow.UseVisualStyleBackColor = true;
             this.buttonYellow.Click += new System.EventHandler(this.buttonYellow_Click);
             // 
             // buttonBlue
             // 
-            this.buttonBlue.Location = new System.Drawing.Point(652, 56);
+            this.buttonBlue.Location = new System.Drawing.Point(654, 404);
             this.buttonBlue.Name = "buttonBlue";
-            this.buttonBlue.Size = new System.Drawing.Size(75, 23);
+            this.buttonBlue.Size = new System.Drawing.Size(55, 55);
             this.buttonBlue.TabIndex = 11;
-            this.buttonBlue.Text = "Синий";
+            this.buttonBlue.Text = "1.";
             this.buttonBlue.UseVisualStyleBackColor = true;
             this.buttonBlue.Click += new System.EventHandler(this.buttonBlue_Click);
             // 
             // buttonPurple
             // 
-            this.buttonPurple.Location = new System.Drawing.Point(701, 132);
+            this.buttonPurple.Location = new System.Drawing.Point(538, 338);
             this.buttonPurple.Name = "buttonPurple";
-            this.buttonPurple.Size = new System.Drawing.Size(75, 23);
+            this.buttonPurple.Size = new System.Drawing.Size(55, 55);
             this.buttonPurple.TabIndex = 15;
-            this.buttonPurple.Text = "Фиолетовый";
+            this.buttonPurple.Text = "2.";
             this.buttonPurple.UseVisualStyleBackColor = true;
             this.buttonPurple.Click += new System.EventHandler(this.buttonPurple_Click);
             // 
             // buttonGreen
             // 
-            this.buttonGreen.Location = new System.Drawing.Point(598, 132);
+            this.buttonGreen.Location = new System.Drawing.Point(773, 338);
             this.buttonGreen.Name = "buttonGreen";
-            this.buttonGreen.Size = new System.Drawing.Size(75, 23);
+            this.buttonGreen.Size = new System.Drawing.Size(55, 55);
             this.buttonGreen.TabIndex = 14;
-            this.buttonGreen.Text = "Зеленый";
+            this.buttonGreen.Text = "2.";
             this.buttonGreen.UseVisualStyleBackColor = true;
             this.buttonGreen.Click += new System.EventHandler(this.buttonGreen_Click);
             // 
             // buttonOrange
             // 
-            this.buttonOrange.Location = new System.Drawing.Point(497, 132);
+            this.buttonOrange.Location = new System.Drawing.Point(654, 164);
             this.buttonOrange.Name = "buttonOrange";
-            this.buttonOrange.Size = new System.Drawing.Size(75, 23);
+            this.buttonOrange.Size = new System.Drawing.Size(55, 55);
             this.buttonOrange.TabIndex = 13;
-            this.buttonOrange.Text = "Оранжевый";
+            this.buttonOrange.Text = "2.";
             this.buttonOrange.UseVisualStyleBackColor = true;
+            this.buttonOrange.Click += new System.EventHandler(this.buttonOrange_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(575, 101);
+            this.label5.Location = new System.Drawing.Point(550, 72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 13);
+            this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Дополнительные цвета";
+            this.label5.Text = "2. Вторичные цвета";
             // 
             // label6
             // 
@@ -318,11 +327,95 @@ namespace ColorLaboratoryGui
             this.label11.TabIndex = 27;
             this.label11.Text = "(double) 0...1";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(552, 94);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 13);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "3. Третичные цвета";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(521, 22);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 13);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Круг Иттена:";
+            // 
+            // buttonRedOrange
+            // 
+            this.buttonRedOrange.Location = new System.Drawing.Point(576, 158);
+            this.buttonRedOrange.Name = "buttonRedOrange";
+            this.buttonRedOrange.Size = new System.Drawing.Size(55, 55);
+            this.buttonRedOrange.TabIndex = 30;
+            this.buttonRedOrange.Text = "3.";
+            this.buttonRedOrange.UseVisualStyleBackColor = true;
+            this.buttonRedOrange.Click += new System.EventHandler(this.buttonRedOrange_Click);
+            // 
+            // buttonYellowOrange
+            // 
+            this.buttonYellowOrange.Location = new System.Drawing.Point(740, 158);
+            this.buttonYellowOrange.Name = "buttonYellowOrange";
+            this.buttonYellowOrange.Size = new System.Drawing.Size(55, 55);
+            this.buttonYellowOrange.TabIndex = 31;
+            this.buttonYellowOrange.Text = "3.";
+            this.buttonYellowOrange.UseVisualStyleBackColor = true;
+            this.buttonYellowOrange.Click += new System.EventHandler(this.buttonYellowOrange_Click);
+            // 
+            // buttonYellowGreen
+            // 
+            this.buttonYellowGreen.Location = new System.Drawing.Point(851, 288);
+            this.buttonYellowGreen.Name = "buttonYellowGreen";
+            this.buttonYellowGreen.Size = new System.Drawing.Size(55, 55);
+            this.buttonYellowGreen.TabIndex = 32;
+            this.buttonYellowGreen.Text = "3.";
+            this.buttonYellowGreen.UseVisualStyleBackColor = true;
+            // 
+            // buttonBlueGreen
+            // 
+            this.buttonBlueGreen.Location = new System.Drawing.Point(740, 404);
+            this.buttonBlueGreen.Name = "buttonBlueGreen";
+            this.buttonBlueGreen.Size = new System.Drawing.Size(55, 55);
+            this.buttonBlueGreen.TabIndex = 33;
+            this.buttonBlueGreen.Text = "3.";
+            this.buttonBlueGreen.UseVisualStyleBackColor = true;
+            // 
+            // buttonBluePurple
+            // 
+            this.buttonBluePurple.Location = new System.Drawing.Point(567, 404);
+            this.buttonBluePurple.Name = "buttonBluePurple";
+            this.buttonBluePurple.Size = new System.Drawing.Size(55, 55);
+            this.buttonBluePurple.TabIndex = 34;
+            this.buttonBluePurple.Text = "3.";
+            this.buttonBluePurple.UseVisualStyleBackColor = true;
+            this.buttonBluePurple.Click += new System.EventHandler(this.buttonBluePurple_Click);
+            // 
+            // buttonRedPurple
+            // 
+            this.buttonRedPurple.Location = new System.Drawing.Point(465, 279);
+            this.buttonRedPurple.Name = "buttonRedPurple";
+            this.buttonRedPurple.Size = new System.Drawing.Size(55, 55);
+            this.buttonRedPurple.TabIndex = 35;
+            this.buttonRedPurple.Text = "3.";
+            this.buttonRedPurple.UseVisualStyleBackColor = true;
+            this.buttonRedPurple.Click += new System.EventHandler(this.buttonRedPurple_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 564);
+            this.Controls.Add(this.buttonRedPurple);
+            this.Controls.Add(this.buttonBluePurple);
+            this.Controls.Add(this.buttonBlueGreen);
+            this.Controls.Add(this.buttonYellowGreen);
+            this.Controls.Add(this.buttonYellowOrange);
+            this.Controls.Add(this.buttonRedOrange);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonCmyk2Rgb);
@@ -353,6 +446,7 @@ namespace ColorLaboratoryGui
             this.Controls.Add(this.buttonApplyRgb);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,6 +482,14 @@ namespace ColorLaboratoryGui
         private System.Windows.Forms.Button buttonCmyk2Rgb;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button buttonRedOrange;
+        private System.Windows.Forms.Button buttonYellowOrange;
+        private System.Windows.Forms.Button buttonYellowGreen;
+        private System.Windows.Forms.Button buttonBlueGreen;
+        private System.Windows.Forms.Button buttonBluePurple;
+        private System.Windows.Forms.Button buttonRedPurple;
     }
 }
 
