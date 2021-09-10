@@ -87,62 +87,29 @@ namespace ColorModelsConverterGui
 
         private async Task Rgb2CmykAsync()
         {
-            var request = new Rgb2Cmyk.Request() { rgb = new Rgb() };
-            request.rgb.R = byte.Parse(textBoxR.Text);
-            request.rgb.G = byte.Parse(textBoxG.Text);
-            request.rgb.B = byte.Parse(textBoxB.Text);
+            var request = new RgbDto() { };
+            request.R = byte.Parse(textBoxR.Text);
+            request.G = byte.Parse(textBoxG.Text);
+            request.B = byte.Parse(textBoxB.Text);
 
             var response = await _colorLaboratoryService.Rgb2Cmyk(request,cancellationToken);
-            textBoxC.Text = response.cmyk.C.ToString();
-            textBoxM.Text = response.cmyk.M.ToString();
-            textBoxY.Text = response.cmyk.Y.ToString();
-            textBoxK.Text = response.cmyk.K.ToString();
+            textBoxC.Text = response.C.ToString();
+            textBoxM.Text = response.M.ToString();
+            textBoxY.Text = response.Y.ToString();
+            textBoxK.Text = response.K.ToString();
         }
         private async Task Cmyk2RgbAsync()
         {
-            var request = new Cmyk2Rgb.Request() { cmyk = new Cmyk() };
-            request.cmyk.C = double.Parse(textBoxC.Text);
-            request.cmyk.M = double.Parse(textBoxM.Text);
-            request.cmyk.Y = double.Parse(textBoxY.Text);
-            request.cmyk.K = double.Parse(textBoxK.Text);
+            var request = new CmykDto() { };
+            request.C = double.Parse(textBoxC.Text);
+            request.M = double.Parse(textBoxM.Text);
+            request.Y = double.Parse(textBoxY.Text);
+            request.K = double.Parse(textBoxK.Text);
 
             var response = await _colorLaboratoryService.Cmyk2Rgb(request, cancellationToken);
-            textBoxR.Text = response.rgb.R.ToString();
-            textBoxG.Text = response.rgb.G.ToString();
-            textBoxB.Text = response.rgb.B.ToString();
-            /*
-            // https://www.rapidtables.com/convert/color/cmyk-to-rgb.html
-
-            double C = 0;
-            double M = 0;
-            double Y = 0;
-            double K = 0;
-
-            if (textBoxC.Text != "")
-            {
-                C = double.Parse(textBoxC.Text);
-            }
-            if (textBoxM.Text != "")
-            {
-                M = double.Parse(textBoxM.Text);
-            }
-            if (textBoxY.Text != "")
-            {
-                Y = double.Parse(textBoxY.Text);
-            }
-            if (textBoxK.Text != "")
-            {
-                K = double.Parse(textBoxK.Text);
-            }
-
-            int R = (int)(255 * (1 - C) * (1 - K));
-            int G = (int)(255 * (1 - M) * (1 - K));
-            int B = (int)(255 * (1 - Y) * (1 - K));
-
-            textBoxR.Text = R.ToString();
-            textBoxG.Text = G.ToString();
-            textBoxB.Text = B.ToString();
-            */
+            textBoxR.Text = response.R.ToString();
+            textBoxG.Text = response.G.ToString();
+            textBoxB.Text = response.B.ToString();
         }
         private void textBoxY_TextChanged(object sender, EventArgs e)
         {

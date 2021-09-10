@@ -6,11 +6,11 @@ namespace ColorModelsConverter.Application.Services.Interfaces
 {
     public interface IColorModelsConverterService
     {
-        Task<Cmyk2Rgb.Response> Cmyk2Rgb(
-            Cmyk2Rgb.Request request,
+        Task<RgbDto> Cmyk2Rgb(
+            CmykDto request,
             CancellationToken cancellationToken);
-        Task<Rgb2Cmyk.Response> Rgb2Cmyk(
-            Rgb2Cmyk.Request request,
+        Task<CmykDto> Rgb2Cmyk(
+            RgbDto request,
             CancellationToken cancellationToken);
     }
 }

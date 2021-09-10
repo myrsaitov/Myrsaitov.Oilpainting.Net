@@ -6,7 +6,6 @@ using System.Linq;
 using System;
 using ColorModelsConverter.Application.Services.Validators;
 using ColorModelsConverter.Application.Services.Exceptions;
-using ColorModelsConverter.Domain;
 
 namespace ColorModelsConverter.Application.Services.Implementations
 {
@@ -19,8 +18,8 @@ namespace ColorModelsConverter.Application.Services.Implementations
         /// <param name="request">цвет в кодировке CMYK</param>
         /// <param name="cancellationToken"></param>
         /// <returns>цвет в кодировке RGB</returns>
-        public async Task<Cmyk2Rgb.Response> Cmyk2Rgb(
-            Cmyk2Rgb.Request request,
+        public async Task<RgbDto> Cmyk2Rgb(
+            CmykDto request,
             CancellationToken cancellationToken)
         {
             // Null Request Check
@@ -38,11 +37,11 @@ namespace ColorModelsConverter.Application.Services.Implementations
                 throw new Cmyk2RgbNotValidException(result.Errors.Select(x => x.ErrorMessage).ToString());
             }
 
-            var response = new Cmyk2Rgb.Response { rgb = new Rgb() };
+            var response = new RgbDto { };
 
-            response.rgb.R = (byte)(255 * (1 - request.cmyk.C) * (1 - request.cmyk.K));
-            response.rgb.G = (byte)(255 * (1 - request.cmyk.M) * (1 - request.cmyk.K));
-            response.rgb.B = (byte)(255 * (1 - request.cmyk.Y) * (1 - request.cmyk.K));
+            response.R = (byte)(255 * (1 - request.C) * (1 - request.K));
+            response.G = (byte)(255 * (1 - request.M) * (1 - request.K));
+            response.B = (byte)(255 * (1 - request.Y) * (1 - request.K));
 
             return response;
         }

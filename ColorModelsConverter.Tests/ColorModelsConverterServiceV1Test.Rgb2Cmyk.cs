@@ -13,7 +13,7 @@ namespace ColorModelsConverter.Tests
         [Theory]
         [AutoData]
         public async Task Rgb2Cmyk_Returns_Response_Success(
-            Rgb2Cmyk.Request request,
+            RgbDto request,
             CancellationToken cancellationToken)
         {
             // Arrange
@@ -30,7 +30,7 @@ namespace ColorModelsConverter.Tests
         [Theory]
         [InlineAutoData(null)]
         public async Task Rgb2Cmyk_Throws_Exception_When_Request_Is_Null(
-            Rgb2Cmyk.Request request,
+            RgbDto request,
             CancellationToken cancellationToken)
         {
             // Act
@@ -42,11 +42,11 @@ namespace ColorModelsConverter.Tests
         [Theory]
         [AutoData]
         public async Task Rgb2Cmyk_Returns_Validation_Error(
-            Rgb2Cmyk.Request request,
+            RgbDto request,
             CancellationToken cancellationToken)
         {
             // Arrange
-            request.rgb = null;
+            request = null;
 
             // Act
             await Assert.ThrowsAsync<Rgb2CmykNotValidException>(
