@@ -33,7 +33,7 @@ namespace ColorModelsConverter.Application.Services.Implementations
 
             var response = new HslDto {};
 
-            double R = (double)request.R / 255;
+           /* double R = (double)request.R / 255;
             double G = (double)request.G / 255;
             double B = (double)request.B / 255;
 
@@ -51,7 +51,7 @@ namespace ColorModelsConverter.Application.Services.Implementations
                 response.M = 0;
                 response.Y = 0;
                 response.K = K;
-            }
+            }*/
 
             return response;
         }

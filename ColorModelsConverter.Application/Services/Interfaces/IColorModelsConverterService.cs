@@ -12,7 +12,7 @@ namespace ColorModelsConverter.Application.Services.Interfaces
         Task<CmykDto> Rgb2Cmyk(
             RgbDto request,
             CancellationToken cancellationToken);
-        Task<HsvDto> Rgb2Hsv(
+        /*Task<HsvDto> Rgb2Hsv(
             RgbDto request,
             CancellationToken cancellationToken);
         Task<RgbDto> Hsv2Rgb(
@@ -23,6 +23,6 @@ namespace ColorModelsConverter.Application.Services.Interfaces
             CancellationToken cancellationToken);
         Task<RgbDto> Hsl2Rgb(
             HslDto request,
-            CancellationToken cancellationToken);
+            CancellationToken cancellationToken);*/
     }
 }
