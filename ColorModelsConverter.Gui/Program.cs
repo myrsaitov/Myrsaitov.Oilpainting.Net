@@ -17,6 +17,9 @@ namespace ColorModelsConverterGui
             services.AddScoped<IColorModelsConverterService, ColorModelsConverterServiceV1>();
 
             services.AddSingleton(CmykMapProfile.GetConfiguredMappingConfig());
+            services.AddSingleton(HslMapProfile.GetConfiguredMappingConfig());
+            services.AddSingleton(HsvMapProfile.GetConfiguredMappingConfig());
+            services.AddSingleton(IttenMapProfile.GetConfiguredMappingConfig());
             services.AddSingleton(RgbMapProfile.GetConfiguredMappingConfig());
             services.AddScoped<IMapper, ServiceMapper>();
 

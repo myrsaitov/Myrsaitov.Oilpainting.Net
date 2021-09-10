@@ -78,12 +78,10 @@ namespace ColorModelsConverterGui
         {
             SetRGB(255, 255, 0);
         }
-
         private void buttonBlue_Click(object sender, EventArgs e)
         {
             SetRGB(0, 0, 255);
         }
-
         private async Task Rgb2CmykAsync()
         {
             var request = new RgbDto() { };
