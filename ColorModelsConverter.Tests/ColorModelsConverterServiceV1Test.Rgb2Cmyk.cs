@@ -28,7 +28,7 @@ namespace ColorModelsConverter.Tests
         }
         [Theory]
         [InlineAutoData(null)]
-        public async Task Rgb2Cmyk_Returns_Validation_Error(
+        public async Task Rgb2Cmyk_Returns_Validation_NullRequest_Error(
             RgbDto request,
             CancellationToken cancellationToken)
         {

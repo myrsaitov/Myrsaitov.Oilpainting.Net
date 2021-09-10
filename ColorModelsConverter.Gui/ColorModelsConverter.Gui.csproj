@@ -39,6 +39,15 @@
     <Reference Include="EventFlow.DependencyInjection, Version=0.83.4713.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\EventFlow.DependencyInjection.0.83.4713\lib\netstandard2.0\EventFlow.DependencyInjection.dll</HintPath>
     </Reference>
+    <Reference Include="Mapster, Version=7.2.0.0, Culture=neutral, PublicKeyToken=2f39883af23c29a8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapster.7.2.0\lib\net45\Mapster.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapster.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=e64997d676a9c1d3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapster.Core.1.2.0\lib\net45\Mapster.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapster.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e64997d676a9c1d3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapster.DependencyInjection.1.0.0\lib\net45\Mapster.DependencyInjection.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -94,6 +103,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -113,6 +123,10 @@
     <ProjectReference Include="..\ColorModelsConverter.Domain\ColorModelsConverter.Domain.csproj">
       <Project>{483c55e6-427f-47a9-9ff8-345766d2aa9d}</Project>
       <Name>ColorModelsConverter.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ColorModelsConverter.Mapper\ColorModelsConverter.Mapper.csproj">
+      <Project>{c5effd7e-dac9-4605-a4f4-06fb3f13f428}</Project>
+      <Name>ColorModelsConverter.Mapper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

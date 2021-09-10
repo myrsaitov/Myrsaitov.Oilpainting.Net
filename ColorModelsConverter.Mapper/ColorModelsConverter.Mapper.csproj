@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.2.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ColorModelsConverter.Application\ColorModelsConverter.Application.csproj" />
+    <ProjectReference Include="..\ColorModelsConverter.Domain\ColorModelsConverter.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

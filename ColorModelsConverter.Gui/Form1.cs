@@ -1,6 +1,7 @@
 ﻿using ColorModelsConverter.Application.Services.Contracts;
 using ColorModelsConverter.Application.Services.Interfaces;
 using ColorModelsConverter.Domain;
+using MapsterMapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +18,12 @@ namespace ColorModelsConverterGui
     public partial class Form1 : Form
     {
         private readonly IColorModelsConverterService _colorLaboratoryService;
+        private readonly IMapper _mapper;
         private readonly CancellationToken cancellationToken;
         public Form1()
         {
             _colorLaboratoryService = (IColorModelsConverterService)Program.ServiceProvider.GetService(typeof(IColorModelsConverterService));
+            _mapper = (IMapper)Program.ServiceProvider.GetService(typeof(IMapper));
             InitializeComponent();
         }
 
@@ -44,7 +47,6 @@ namespace ColorModelsConverterGui
                 textBoxG.Text = "255";
             }
         }
-
         private void textBoxB_TextChanged(object sender, EventArgs e)
         {
             if (int.Parse(textBoxB.Text) > 255)
@@ -52,7 +54,6 @@ namespace ColorModelsConverterGui
                 textBoxB.Text = "255";
             }
         }
-
         private void SetRGB(int R, int G, int B)
         {
             textBoxR.Text = R.ToString();
@@ -61,7 +62,6 @@ namespace ColorModelsConverterGui
             ApplyColor();
             Rgb2CmykAsync();
         }
-
         private void ApplyColor()
         {
             int R = int.Parse(textBoxR.Text);
@@ -69,7 +69,6 @@ namespace ColorModelsConverterGui
             int B = int.Parse(textBoxB.Text);
             panel1.BackColor = Color.FromArgb(R, G, B);
         }
-
         private void buttonRed_Click(object sender, EventArgs e)
         {
             SetRGB(255, 0, 0);

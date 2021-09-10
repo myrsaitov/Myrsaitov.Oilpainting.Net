@@ -25,7 +25,6 @@ namespace ColorModelsConverter.Application.Services.Implementations
             // Fluent Validation
             var validator = new Cmyk2RgbRequestValidator();
             var result = await validator.ValidateAsync(request);
-
             if (!result.IsValid)
             {
                 throw new Cmyk2RgbNotValidException(result.Errors.Select(x => x.ErrorMessage).ToString());

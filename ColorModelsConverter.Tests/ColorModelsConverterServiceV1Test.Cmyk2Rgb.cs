@@ -32,21 +32,39 @@ namespace ColorModelsConverter.Tests
         }
         [Theory]
         [InlineAutoData(null)]
-        public async Task Cmyk2Rgb_Returns_Validation_Error(
+        public async Task Cmyk2Rgb_Returns_Validation_NullRequest_Error(
             CmykDto request,
             CancellationToken cancellationToken)
         {
             // Arrange
-            request.C = 1; // > 1
-            request.M = 2; // > 1
-            request.Y = 3; // > 1
-            request.K = 4; // > 1
 
             // Act
             await Assert.ThrowsAsync<Cmyk2RgbNotValidException>(
                 async () => await _colorLaboratoryServiceV1.Cmyk2Rgb(
                     request,
                     cancellationToken));
+
+            // Assert
+        }
+        [Theory]
+        [AutoData]
+        public async Task Cmyk2Rgb_Returns_Validation_ValueRange_Error(
+            CmykDto request,
+            CancellationToken cancellationToken)
+        {
+            // Arrange
+            request.C = 10; // > 1
+            request.M = 20; // > 1
+            request.Y = 30; // > 1
+            request.K = 40; // > 1
+
+            // Act
+            await Assert.ThrowsAsync<Cmyk2RgbNotValidException>(
+                async () => await _colorLaboratoryServiceV1.Cmyk2Rgb(
+                    request,
+                    cancellationToken));
+
+            // Assert
         }
     }
 }
