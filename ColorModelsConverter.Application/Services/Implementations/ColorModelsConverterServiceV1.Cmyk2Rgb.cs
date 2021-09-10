@@ -22,12 +22,6 @@ namespace ColorModelsConverter.Application.Services.Implementations
             CmykDto request,
             CancellationToken cancellationToken)
         {
-            // Null Request Check
-            if (request is null)
-            {
-                throw new ArgumentNullException(nameof(request));
-            }
-
             // Fluent Validation
             var validator = new Cmyk2RgbRequestValidator();
             var result = await validator.ValidateAsync(request);

@@ -23,12 +23,6 @@ namespace ColorModelsConverter.Application.Services.Implementations
             RgbDto request,
             CancellationToken cancellationToken)
         {
-            // Null Request Check
-            if (request is null)
-            {
-                throw new ArgumentNullException(nameof(request));
-            }
-
             // Fluent Validation
             var validator = new Rgb2CmykRequestValidator();
             var result = await validator.ValidateAsync(request);

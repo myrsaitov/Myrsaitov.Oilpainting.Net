@@ -22,6 +22,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorModelsConverter.Gui", "ColorModelsConverter.Gui\ColorModelsConverter.Gui.csproj", "{CD15F3D8-082D-4FD8-9034-B5992B7AD3BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaintingAnalyzer", "PaintingAnalyzer", "{2FAB710A-2F15-45EA-BF83-AAEDFB3644F8}"
+	ProjectSection(SolutionItems) = preProject
+		PaintingAnalyzer.TODO.txt = PaintingAnalyzer.TODO.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{D5661BC2-CB6C-4917-8645-70B0AB239205}"
 EndProject
@@ -42,6 +45,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E32270CA-1416-41DA-97F1-0CB807B84E80}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaletteBuilder", "PaletteBuilder", "{11EF716B-5C23-4C63-99EB-4A3E5BA44DA5}"
+	ProjectSection(SolutionItems) = preProject
+		PaletteBuilder.TODO.txt = PaletteBuilder.TODO.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaintErrorFinder", "PaintErrorFinder", "{06D0D475-7983-4990-9390-72424531CB3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

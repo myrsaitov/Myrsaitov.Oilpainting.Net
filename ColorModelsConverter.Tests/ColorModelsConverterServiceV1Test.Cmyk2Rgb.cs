@@ -17,42 +17,30 @@ namespace ColorModelsConverter.Tests
             CancellationToken cancellationToken)
         {
             // Arrange
-            request.C = 0.1;
-            request.M = 0.2;
-            request.Y = 0.3;
-            request.K = 0.4;
+            request.C = 0.1; // < 1
+            request.M = 0.2; // < 1
+            request.Y = 0.3; // < 1
+            request.K = 0.4; // < 1
+
             // Act
             var response = await _colorLaboratoryServiceV1.Cmyk2Rgb(
                 request,
                 cancellationToken);
 
             // Assert
-
             Assert.NotNull(response);
         }
         [Theory]
         [InlineAutoData(null)]
-        public async Task Cmyk2Rgb_Throws_Exception_When_Request_Is_Null(
-            CmykDto request,
-            CancellationToken cancellationToken)
-        {
-            // Act
-            await Assert.ThrowsAsync<ArgumentNullException>(
-                async () => await _colorLaboratoryServiceV1.Cmyk2Rgb(
-                    request,
-                    cancellationToken));
-        }
-        [Theory]
-        [AutoData]
         public async Task Cmyk2Rgb_Returns_Validation_Error(
             CmykDto request,
             CancellationToken cancellationToken)
         {
             // Arrange
-            request.C = 1;
-            request.M = 2;
-            request.Y = 3;
-            request.K = 4;
+            request.C = 1; // > 1
+            request.M = 2; // > 1
+            request.Y = 3; // > 1
+            request.K = 4; // > 1
 
             // Act
             await Assert.ThrowsAsync<Cmyk2RgbNotValidException>(
@@ -60,6 +48,5 @@ namespace ColorModelsConverter.Tests
                     request,
                     cancellationToken));
         }
-
     }
 }
