@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ColorLaboratory", "ColorLaboratory", "{29D512DF-137C-4CDD-BB43-AC541F4F4610}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ColorModelsConverter", "ColorModelsConverter", "{29D512DF-137C-4CDD-BB43-AC541F4F4610}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{26752566-F78E-4664-978D-02168DCC7F2B}"
 EndProject
@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{C7E6CCA6-D926-4C95-B377-5050C9D41B7F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorLaboratory.Application", "ColorLaboratory.Application\ColorLaboratory.Application.csproj", "{B4DAA84B-BF8C-4704-A85B-65BFB01A77CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorModelsConverter.Application", "ColorModelsConverter.Application\ColorModelsConverter.Application.csproj", "{B4DAA84B-BF8C-4704-A85B-65BFB01A77CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorLaboratory.Domain", "ColorLaboratory.Domain\ColorLaboratory.Domain.csproj", "{483C55E6-427F-47A9-9FF8-345766D2AA9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorModelsConverter.Domain", "ColorModelsConverter.Domain\ColorModelsConverter.Domain.csproj", "{483C55E6-427F-47A9-9FF8-345766D2AA9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorLaboratory.Gui", "ColorLaboratory.Gui\ColorLaboratory.Gui.csproj", "{CD15F3D8-082D-4FD8-9034-B5992B7AD3BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorModelsConverter.Gui", "ColorModelsConverter.Gui\ColorModelsConverter.Gui.csproj", "{CD15F3D8-082D-4FD8-9034-B5992B7AD3BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaintingAnalyzer", "PaintingAnalyzer", "{2FAB710A-2F15-45EA-BF83-AAEDFB3644F8}"
 EndProject
@@ -37,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{740CA88D-991E-492C-81AE-ECA05B6C207E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorLaboratory.Tests", "ColorLaboratory.Tests\ColorLaboratory.Tests.csproj", "{FE57541C-B54D-4B88-8821-E508C1CBB480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorModelsConverter.Tests", "ColorModelsConverter.Tests\ColorModelsConverter.Tests.csproj", "{FE57541C-B54D-4B88-8821-E508C1CBB480}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E32270CA-1416-41DA-97F1-0CB807B84E80}"
 EndProject
